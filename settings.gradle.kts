@@ -23,4 +23,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "DealCart Cricket"
 include(":app")
-include(":cricketgame")
+include(":dealcart-cricket")
