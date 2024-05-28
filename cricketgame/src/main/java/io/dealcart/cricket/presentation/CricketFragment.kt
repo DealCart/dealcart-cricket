@@ -24,6 +24,22 @@ class CricketFragment : Fragment() {
             cricketViewModel.addUserCricketScore(requireContext(), data?.toInt() ?: 0)
         },
         "android.game_leaderboard" to {
+//            val lead = LeaderboardUiData(
+//                firstRankName = "Saad",
+//                firstRankScore = 2,
+//                secondRankName = "Rohan",
+//                secondRankScore = 4,
+//                thirdRankName = "Zain",
+//                thirdRankScore = 4,
+//                userRankScore = 2,
+//                userRank = 5,
+//                leaderboardList = listOf(
+//                    LeaderboardListUiData(
+//                        5, "Tatheer", 3
+//                    )
+//                ))
+
+
             cricketViewModel.leaderboardLiveData.value?.let {
                 findNavController().navigate(
                     CricketFragmentDirections.actionCricketGameFragmentToCricketLeaderboardDialogFragment(
@@ -33,7 +49,7 @@ class CricketFragment : Fragment() {
             }
         },
         "android.game_quit" to {
-            findNavController().navigateUp()
+            activity?.finish()
         },
         "android.game_restart" to {
 
@@ -54,6 +70,7 @@ class CricketFragment : Fragment() {
             fromAssets = true,
             handles = bridgeHandles
         )
+
 
         return binding.root
     }

@@ -9,6 +9,7 @@ import com.android.volley.Response
 import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.Volley
 import dagger.hilt.android.lifecycle.HiltViewModel
+import io.dealcart.cricket.CricketGameActivity
 import io.dealcart.cricket.data.LeaderboardBody
 import io.dealcart.cricket.data.LeaderboardListUiData
 import io.dealcart.cricket.data.LeaderboardUiData
@@ -22,19 +23,21 @@ class CricketViewModel @Inject constructor() : ViewModel() {
 
     fun getLeaderboard(context: Context) {
         val leaderboardList = arrayListOf<LeaderboardBody>()
-        val url = "https://api-dev.dealcart.io/api/consumer/games?gameType=cricket"
+        val url = "https://api-dev.dealcart.io/api/consumer/cricket-game-city-mall/?gameType=cricket&cityMallUserId=" + CricketGameActivity.id
         val requestQueue = Volley.newRequestQueue(context)
 
         val stringRequest = object : JsonObjectRequest(
             Method.GET, url, null,
             Response.Listener { response ->
-                val jsonArr = response.getJSONArray("leaderboard")
+
+                val jsonArr = response.getJSONObject("body").getJSONArray("leaderBoard")
                 for (i in 0 until jsonArr.length()) {
                     val jsonObject = jsonArr.getJSONObject(i)
                     val leaderboardBody = LeaderboardBody(
                         jsonObject.getInt("score"),
                         jsonObject.getString("customerName"),
-                        jsonObject.getInt("rank")
+                        jsonObject.getInt("rank"),
+                        jsonObject.getString("userType")
                     )
 
                     leaderboardList.add(leaderboardBody)
@@ -51,8 +54,7 @@ class CricketViewModel @Inject constructor() : ViewModel() {
         ) {
             override fun getHeaders(): MutableMap<String, String> {
                 val headers = HashMap<String, String>()
-                headers["Authorization"] =
-                    "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjdXN0b21lcklkIjoxMzQsInVzZXJUeXBlIjoiY29uc3VtZXIiLCJpYXQiOjE3MTY1NTczMzIsImV4cCI6MTc0ODA5MzMzMn0.zu77XkEkCpVv0AzJSiKX7jD-A3-teRUBxVe1Tf1hkS0"
+//                headers["Authorization"] = "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjdXN0b21lcklkIjoxMzQsInVzZXJUeXBlIjoiY29uc3VtZXIiLCJpYXQiOjE3MTY1NTczMzIsImV4cCI6MTc0ODA5MzMzMn0.zu77XkEkCpVv0AzJSiKX7jD-A3-teRUBxVe1Tf1hkS0"
                 return headers
             }
         }
@@ -60,10 +62,12 @@ class CricketViewModel @Inject constructor() : ViewModel() {
     }
 
     fun addUserCricketScore(context: Context, score: Int) {
-        val url = "https://api-dev.dealcart.io/api/consumer/games"
+        val url = "https://api-dev.dealcart.io/api/consumer/cricket-game-city-mall/"
         val requestQueue = Volley.newRequestQueue(context)
 
         val params = HashMap<String, String>()
+        params["cityMallUserName"] = CricketGameActivity.name
+        params["cityMallUserId"] = CricketGameActivity.id
         params["score"] = score.toString()
         params["gameType"] = "cricket"
 
@@ -79,8 +83,7 @@ class CricketViewModel @Inject constructor() : ViewModel() {
             }) {
             override fun getHeaders(): MutableMap<String, String> {
                 val headers = HashMap<String, String>()
-                headers["Authorization"] =
-                    "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjdXN0b21lcklkIjoxMzQsInVzZXJUeXBlIjoiY29uc3VtZXIiLCJpYXQiOjE3MTY1NTczMzIsImV4cCI6MTc0ODA5MzMzMn0.zu77XkEkCpVv0AzJSiKX7jD-A3-teRUBxVe1Tf1hkS0"
+//                headers["Authorization"] = "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjdXN0b21lcklkIjoxMzQsInVzZXJUeXBlIjoiY29uc3VtZXIiLCJpYXQiOjE3MTY1NTczMzIsImV4cCI6MTc0ODA5MzMzMn0.zu77XkEkCpVv0AzJSiKX7jD-A3-teRUBxVe1Tf1hkS0"
                 return headers
             }
 
@@ -107,12 +110,13 @@ class CricketViewModel @Inject constructor() : ViewModel() {
             if (it.customerName.isEmpty()) {
                 it.customerName = "Guest"
             }
-            if (index in 3..9) {
+            if (index in 0..9) {
                 leaderboardList.add(
                     LeaderboardListUiData(
                         name = it.customerName,
                         rank = it.rank,
-                        score = it.score
+                        score = it.score,
+                        userType = it.userType
                     )
                 )
             }

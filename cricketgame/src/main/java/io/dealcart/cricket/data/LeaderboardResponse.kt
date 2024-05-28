@@ -14,6 +14,7 @@ data class LeaderboardBody(
     val score: Int,
     var customerName: String,
     val rank: Int,
+    val userType: String,
 )
 
 @Keep
@@ -35,5 +36,6 @@ data class LeaderboardUiData(
 data class LeaderboardListUiData(
     val rank: Int = 0,
     val name: String,
-    val score: Int = 0
+    val score: Int = 0,
+    val userType: String
 ) : Parcelable
