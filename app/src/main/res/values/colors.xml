@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="black">#FF000000</color>
+    <color name="blue_light">#53A4D9</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="blue_dimlight">#4487BB</color>
+    <color name="dealcart_green">#79BF9F</color>
+    <color name="yellow_position">#FCC02C</color>
+    <color name="dc_orange_primary">#FE7B31</color>
+    <color name="secondary_color">#F9C338</color>
 </resources>

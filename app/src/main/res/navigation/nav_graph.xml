@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/cricketGameFragment">
+
+    <fragment
+        android:id="@+id/cricketGameFragment"
+        android:name="com.example.dealcartcricket.presentation.CricketFragment"
+        android:label="CricketGameFragment" >
+        <action
+            android:id="@+id/action_cricketGameFragment_to_cricketLeaderboardDialogFragment"
+            app:destination="@id/cricketLeaderboardDialogFragment" />
+    </fragment>
+    <dialog
+        android:id="@+id/cricketLeaderboardDialogFragment"
+        android:name="com.example.dealcartcricket.presentation.CricketLeaderboardDialogFragment"
+        android:label="CricketLeaderboardDialogFragment" >
+        <argument
+            android:name="argsData"
+            app:argType="com.example.dealcartcricket.data.LeaderboardUiData" />
+    </dialog>
+</navigation>
