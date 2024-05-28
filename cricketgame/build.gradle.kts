@@ -82,9 +82,9 @@ afterEvaluate {
     publishing {
         publications {
             create<MavenPublication>("release") {
-                groupId = "com.github.dealcart"
-                artifactId = "cricket-game"
-                version = "1.0.2"
+                groupId = "io.dealcart"
+                artifactId = "cricketgame"
+                version = "1.0.3"
             }
         }
     }
