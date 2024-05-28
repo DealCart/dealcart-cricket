@@ -61,6 +61,7 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_marginHorizontal="16dp"
+            android:layout_marginBottom="8dp"
             android:background="@drawable/score_table_bg"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -92,6 +93,7 @@
                     android:id="@+id/labelTotalRunIndia"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
                     android:includeFontPadding="false"
                     android:text="@string/total_runs"
                     android:textColor="@color/white"
@@ -104,7 +106,9 @@
                     android:id="@+id/tvTotalRunIndia"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
                     android:includeFontPadding="false"
+                    android:text="@{@string/quantity_value(viewModel.argsData.indScore)}"
                     android:textColor="@color/white"
                     android:textSize="12sp"
                     android:textStyle="bold"
@@ -138,6 +142,7 @@
                     android:id="@+id/labelTotalRunPak"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
                     android:includeFontPadding="false"
                     android:text="@string/total_runs"
                     android:textColor="@color/white"
@@ -150,7 +155,9 @@
                     android:id="@+id/tvTotalRunPak"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
                     android:includeFontPadding="false"
+                    android:text="@{@string/quantity_value(viewModel.argsData.pakScore)}"
                     android:textColor="@color/white"
                     android:textSize="12sp"
                     android:textStyle="bold"
@@ -185,17 +192,28 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/yourScore"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="48dp"
                 android:background="@drawable/my_score_bg"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent">
 
                 <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:background="@drawable/my_score_bg"
+                    android:scaleType="fitXY"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
                     android:id="@+id/ivStar"
                     android:layout_width="12dp"
                     android:layout_height="12dp"
-                    android:layout_marginStart="3dp"
+                    android:layout_marginStart="16dp"
                     android:src="@drawable/ic_cricket_star_user"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -205,8 +223,8 @@
                     android:id="@+id/tvId"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginVertical="12dp"
-                    android:layout_marginStart="4dp"
+                    android:layout_marginVertical="8dp"
+                    android:layout_marginStart="8dp"
                     android:fontFamily="@font/poppins_semibold"
                     android:includeFontPadding="false"
                     android:text="@{@string/quantity_value(viewModel.argsData.userRank)}"
@@ -223,7 +241,7 @@
                     android:id="@+id/tvName"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="4dp"
+                    android:layout_marginStart="16dp"
                     android:layout_marginEnd="14dp"
                     android:ellipsize="end"
                     android:fontFamily="@font/poppins_semibold"
@@ -256,11 +274,6 @@
                     tools:text="1450" />
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.constraintlayout.widget.ConstraintLayout>
-
-        <!--start dotted view-->
-
-
-        <!--end dotted view-->
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

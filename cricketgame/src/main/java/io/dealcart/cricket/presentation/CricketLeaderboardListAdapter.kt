@@ -37,9 +37,22 @@ class CricketLeaderboardListAdapter(private val filterList: List<LeaderboardList
     ) : RecyclerView.ViewHolder(binding.root) {
         fun onBind(item: LeaderboardListUiData, position: Int) {
             binding.model = item
-//            if (item.userType == "dc_user")
-//                binding.ivFlag.setImageIcon(R.drawable.ic_falg_pak)
-//                else binding.ivFlag.setImageDrawable(R.drawable.ic_falg_pak)
+            if (item.userType == "dc_user")
+
+                binding.ivFlag.setImageDrawable(
+                    ContextCompat.getDrawable(
+                        binding.root.context,
+                        R.drawable.ic_falg_pak
+                    )
+                )
+            else
+                binding.ivFlag.setImageDrawable(
+                    ContextCompat.getDrawable(
+                        binding.root.context,
+                        R.drawable.ic_flag_india
+                    )
+                )
+
         }
     }
 }

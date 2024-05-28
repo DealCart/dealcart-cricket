@@ -16,7 +16,7 @@ class MainActivity : AppCompatActivity() {
         binding.startGame.setOnClickListener {
             CricketGameActivity.start(
                 this,
-                "1",
+                "2",
                 "Saad Sheikh"
             )
         }

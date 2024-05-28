@@ -20,12 +20,9 @@ data class LeaderboardBody(
 @Keep
 @Parcelize
 data class LeaderboardUiData(
-    val firstRankName: String,
-    val firstRankScore: Int = 0,
-    val secondRankName: String,
-    val secondRankScore: Int = 0,
-    val thirdRankName: String,
-    val thirdRankScore: Int = 0,
+    val bestScore: Int = 0,
+    val pakScore: Int = 0,
+    val indScore: Int = 0,
     val userRankScore: Int = 0,
     val userRank: Int = 0,
     val leaderboardList: List<LeaderboardListUiData>,
