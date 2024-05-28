@@ -84,7 +84,7 @@ afterEvaluate {
             create<MavenPublication>("release") {
                 groupId = "io.dealcart"
                 artifactId = "dealcart-cricket"
-                version = "1.0.4"
+                version = "1.0.5"
             }
         }
     }
