@@ -1,3 +1,3 @@
 package io.dealcart.cricket.utils
 
-const val BASE_URL = "https://api-staging.dealcart.io/api/consumer/cricket-game-city-mall"
+const val BASE_URL = "https://api.dealcart.io/api/consumer/cricket-game-city-mall"
