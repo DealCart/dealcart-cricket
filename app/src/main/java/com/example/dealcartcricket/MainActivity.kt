@@ -1,16 +1,24 @@
 package com.example.dealcartcricket
 
-import android.content.Intent
 import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
+import com.example.dealcartcricket.databinding.ActivityMainBinding
 import io.dealcart.cricket.CricketGameActivity
 
 class MainActivity : AppCompatActivity() {
+
+    private lateinit var binding: ActivityMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        startActivity(Intent(this, CricketGameActivity::class.java))
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
+        binding.startGame.setOnClickListener {
+            CricketGameActivity.start(
+                this,
+                "2",
+                "Saad Sheikh"
+            )
+        }
     }
 }

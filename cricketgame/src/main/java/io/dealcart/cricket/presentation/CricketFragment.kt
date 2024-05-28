@@ -33,7 +33,7 @@ class CricketFragment : Fragment() {
             }
         },
         "android.game_quit" to {
-            findNavController().navigateUp()
+            activity?.finish()
         },
         "android.game_restart" to {
 
@@ -54,6 +54,7 @@ class CricketFragment : Fragment() {
             fromAssets = true,
             handles = bridgeHandles
         )
+
 
         return binding.root
     }

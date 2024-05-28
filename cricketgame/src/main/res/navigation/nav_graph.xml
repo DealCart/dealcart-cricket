@@ -7,17 +7,17 @@
     <fragment
         android:id="@+id/cricketGameFragment"
         android:name="io.dealcart.cricket.presentation.CricketFragment"
-        android:label="CricketGameFragment" >
+        android:label="CricketGameFragment">
         <action
             android:id="@+id/action_cricketGameFragment_to_cricketLeaderboardDialogFragment"
             app:destination="@id/cricketLeaderboardDialogFragment" />
     </fragment>
-    <dialog
+    <fragment
         android:id="@+id/cricketLeaderboardDialogFragment"
         android:name="io.dealcart.cricket.presentation.CricketLeaderboardDialogFragment"
-        android:label="CricketLeaderboardDialogFragment" >
+        android:label="CricketLeaderboardDialogFragment">
         <argument
             android:name="argsData"
             app:argType="io.dealcart.cricket.data.LeaderboardUiData" />
-    </dialog>
+    </fragment>
 </navigation>

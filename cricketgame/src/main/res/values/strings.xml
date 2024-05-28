@@ -7,4 +7,5 @@
     <string name="_3">3</string>
     <string name="you">You</string>
     <string name="quantity_value">%d</string>
+    <string name="total_runs">Total runs</string>
 </resources>

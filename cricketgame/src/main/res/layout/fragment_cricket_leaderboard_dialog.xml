@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".features.games.cricket.presentation.LeaderboardDialogFragment">
+    xmlns:tools="http://schemas.android.com/tools">
 
     <data>
 
@@ -17,27 +16,16 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@drawable/bg_cricket_leaderboard_dialog">
 
-        <TextView
-            android:id="@+id/tvAajKa"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/rowdies_bold"
-            android:gravity="center"
-            android:includeFontPadding="false"
-            android:text="@string/aaj_ka"
-            android:textColor="@color/white"
-            android:textSize="32sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+        android:layout_height="match_parent"
+        android:background="@drawable/main_bg">
+
 
         <TextView
             android:id="@+id/tvLeaderboard"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
             android:fontFamily="@font/rowdies_bold"
             android:gravity="center"
             android:includeFontPadding="false"
@@ -46,347 +34,248 @@
             android:textSize="32sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvAajKa" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
             android:id="@+id/closeBtn"
-            android:layout_width="28dp"
-            android:layout_height="33dp"
-            android:layout_marginEnd="12dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="12dp"
             android:clickable="true"
             android:focusable="true"
             android:src="@drawable/ic_cross_cricket_leaderboard"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvLeaderboard" />
+            app:layout_constraintTop_toTopOf="parent" />
 
-        <!--start second rank group detail-->
 
-        <androidx.constraintlayout.widget.Group
-            android:id="@+id/groupRankTwo"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:constraint_referenced_ids="tvNameTwo,tvScoreTwo" />
-
-        <TextView
-            android:id="@+id/tvTwo"
-            android:layout_width="59dp"
-            android:layout_height="59dp"
-            android:background="@drawable/bg_cricket_position_two"
-            android:elevation="6dp"
-            android:fontFamily="@font/rowdies"
-            android:gravity="center"
-            android:includeFontPadding="false"
-            android:text="@string/_2"
-            android:textColor="@color/white"
-            android:textSize="32sp"
-            app:layout_constraintBottom_toBottomOf="@+id/tvOne"
-            app:layout_constraintEnd_toStartOf="@+id/tvOne"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent" />
-
-        <TextView
-            android:id="@+id/tvNameTwo"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="2dp"
-            android:fontFamily="@font/poppins_semibold"
-            android:text="@{viewModel.argsData.secondRankName}"
-            android:textColor="@color/white"
-            android:textSize="14sp"
-            app:layout_constraintEnd_toEndOf="@+id/tvTwo"
-            app:layout_constraintStart_toStartOf="@+id/tvTwo"
-            app:layout_constraintTop_toBottomOf="@+id/tvTwo"
-            tools:text="Amna" />
-
-        <TextView
-            android:id="@+id/tvScoreTwo"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/rowdies"
-            android:text="@{@string/quantity_value(viewModel.argsData.secondRankScore)}"
-            android:textColor="@color/white"
-            android:textSize="18sp"
-            app:layout_constraintBottom_toBottomOf="@+id/tvScoreOne"
-            app:layout_constraintEnd_toEndOf="@+id/tvTwo"
-            app:layout_constraintStart_toStartOf="@+id/tvTwo"
-            app:layout_constraintTop_toBottomOf="@+id/tvNameTwo"
-            tools:text="2450" />
-
-        <!--end second rank group detail-->
-
-        <!--start first rank group detail-->
         <ImageView
-            android:id="@+id/ivLeaderCap"
+            android:id="@+id/ivTrophy"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:elevation="6dp"
-            android:src="@drawable/ic_cricket_leader_cap"
-            app:layout_constraintBottom_toTopOf="@+id/tvOne"
-            app:layout_constraintEnd_toEndOf="@+id/tvOne"
-            app:layout_constraintStart_toStartOf="@+id/tvOne"
+            android:src="@drawable/trophy"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvLeaderboard" />
-
-        <TextView
-            android:id="@+id/tvOne"
-            android:layout_width="73dp"
-            android:layout_height="73dp"
-            android:layout_marginTop="2dp"
-            android:background="@drawable/bg_cricket_position_one"
-            android:elevation="10dp"
-            android:fontFamily="@font/rowdies"
-            android:gravity="center"
-            android:includeFontPadding="false"
-            android:text="@string/_1"
-            android:textColor="@color/white"
-            android:textSize="52sp"
-            app:layout_constraintBottom_toTopOf="@+id/tvNameOne"
-            app:layout_constraintEnd_toStartOf="@+id/tvThree"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/tvTwo"
-            app:layout_constraintTop_toBottomOf="@+id/ivLeaderCap" />
-
-        <TextView
-            android:id="@+id/tvNameOne"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="2dp"
-            android:fontFamily="@font/poppins_semibold"
-            android:text="@{viewModel.argsData.firstRankName}"
-            android:textColor="@color/white"
-            android:textSize="14sp"
-            app:layout_constraintBottom_toTopOf="@+id/tvScoreOne"
-            app:layout_constraintEnd_toEndOf="@+id/tvOne"
-            app:layout_constraintStart_toStartOf="@+id/tvOne"
-            app:layout_constraintTop_toBottomOf="@+id/tvOne"
-            tools:text="Amna" />
-
-        <TextView
-            android:id="@+id/tvScoreOne"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/rowdies"
-            android:text="@{@string/quantity_value(viewModel.argsData.firstRankScore)}"
-            android:textColor="@color/white"
-            android:textSize="18sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintBottom_toTopOf="@id/vHorizontalLine"
-            app:layout_constraintEnd_toEndOf="@+id/tvOne"
-            app:layout_constraintStart_toStartOf="@+id/tvOne"
-            app:layout_constraintTop_toBottomOf="@+id/tvNameOne"
-            tools:text="3450" />
-
-        <!--end first rank group detail-->
-
-        <!--start third rank group detail-->
-        <androidx.constraintlayout.widget.Group
-            android:id="@+id/groupRankThree"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:constraint_referenced_ids="tvNameThree,tvScoreThree" />
-
-        <TextView
-            android:id="@+id/tvThree"
-            android:layout_width="59dp"
-            android:layout_height="59dp"
-            android:background="@drawable/bg_cricket_position_three"
-            android:elevation="6dp"
-            android:fontFamily="@font/rowdies"
-            android:gravity="center"
-            android:includeFontPadding="false"
-            android:text="@string/_3"
-            android:textColor="@color/white"
-            android:textSize="32sp"
-            app:layout_constraintBottom_toBottomOf="@+id/tvOne"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/tvOne" />
-
-        <TextView
-            android:id="@+id/tvNameThree"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="2dp"
-            android:fontFamily="@font/poppins_semibold"
-            android:text="@{viewModel.argsData.thirdRankName}"
-            android:textColor="@color/white"
-            android:textSize="14sp"
-            app:layout_constraintEnd_toEndOf="@+id/tvThree"
-            app:layout_constraintStart_toStartOf="@+id/tvThree"
-            app:layout_constraintTop_toBottomOf="@+id/tvThree"
-            tools:text="Amna" />
-
-        <TextView
-            android:id="@+id/tvScoreThree"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/rowdies"
-            android:text="@{@string/quantity_value(viewModel.argsData.thirdRankScore)}"
-            android:textColor="@color/white"
-            android:textSize="18sp"
-            app:layout_constraintBottom_toBottomOf="@+id/tvScoreOne"
-            app:layout_constraintEnd_toEndOf="@+id/tvThree"
-            app:layout_constraintStart_toStartOf="@+id/tvThree"
-            app:layout_constraintTop_toBottomOf="@+id/tvNameOne"
-            tools:text="1450" />
-
-        <!--end third rank group detail-->
-
-        <View
-            android:id="@+id/vHorizontalLine"
-            android:layout_width="0dp"
-            android:layout_height="1dp"
-            android:layout_marginHorizontal="19dp"
-            android:layout_marginTop="2dp"
-            android:background="@color/white"
-            app:layout_constraintBottom_toTopOf="@+id/recyclerView"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tvScoreThree" />
-
-        <!--start list users score-->
-
-        <!--end list users score-->
-
-        <!--start dotted view-->
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerView"
-            adapter="@{adapter}"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="38dp"
-            android:layout_marginTop="2dp"
-            android:layout_marginBottom="14dp"
-            android:nestedScrollingEnabled="false"
-            android:orientation="vertical"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintBottom_toTopOf="@+id/tvRestA"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.181"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/vHorizontalLine"
-            tools:itemCount="7"
-            tools:listitem="@layout/cricket_game_leaderboard_item" />
-
-        <androidx.constraintlayout.widget.Group
-            android:id="@+id/groupDot"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:constraint_referenced_ids="tvRestA,tvRestB,tvRestC" />
-
-        <View
-            android:id="@+id/tvRestA"
-            android:layout_width="2dp"
-            android:layout_height="2dp"
-            android:layout_marginStart="3dp"
-            android:layout_marginTop="-14dp"
-            android:layout_marginBottom="6dp"
-            android:background="@color/white"
-            app:layout_constraintBottom_toTopOf="@+id/tvRestB"
-            app:layout_constraintStart_toStartOf="@+id/recyclerView"
-            app:layout_constraintTop_toBottomOf="@+id/recyclerView" />
-
-        <View
-            android:id="@+id/tvRestB"
-            android:layout_width="2dp"
-            android:layout_height="4dp"
-            android:layout_marginStart="3dp"
-            android:layout_marginBottom="6dp"
-            android:background="@color/white"
-            app:layout_constraintBottom_toTopOf="@+id/tvRestC"
-            app:layout_constraintStart_toStartOf="@+id/recyclerView"
-            app:layout_constraintTop_toBottomOf="@+id/tvRestA" />
-
-        <View
-            android:id="@+id/tvRestC"
-            android:layout_width="2dp"
-            android:layout_height="2dp"
-            android:layout_marginStart="3dp"
-            android:layout_marginBottom="7dp"
-            android:background="@color/white"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintBottom_toTopOf="@+id/yourScore"
-            app:layout_constraintStart_toStartOf="@+id/recyclerView"
-            app:layout_constraintTop_toBottomOf="@+id/tvRestB" />
-
-        <!--end dotted view-->
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/yourScore"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="23dp"
-            android:layout_marginBottom="9dp"
-            android:background="@color/blue_dimlight"
+            android:layout_height="0dp"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/score_table_bg"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent">
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ivTrophy">
 
-            <ImageView
-                android:id="@+id/ivStar"
-                android:layout_width="12dp"
-                android:layout_height="12dp"
-                android:layout_marginStart="3dp"
-                android:src="@drawable/ic_cricket_star_user"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <TextView
-                android:id="@+id/tvId"
-                android:layout_width="wrap_content"
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/header"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginVertical="12dp"
-                android:layout_marginStart="4dp"
-                android:fontFamily="@font/poppins_semibold"
-                android:includeFontPadding="false"
-                android:text="@{@string/quantity_value(viewModel.argsData.userRank)}"
-                android:textColor="@color/white"
-                android:textSize="16sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/tvName"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toEndOf="@+id/ivStar"
-                app:layout_constraintTop_toTopOf="parent"
-                tools:text="52" />
-
-            <TextView
-                android:id="@+id/tvName"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="4dp"
-                android:layout_marginEnd="14dp"
-                android:ellipsize="end"
-                android:fontFamily="@font/poppins_semibold"
-                android:includeFontPadding="false"
-                android:maxLines="1"
-                android:text="@string/you"
-                android:textColor="@color/white"
-                android:textSize="16sp"
-                app:layout_constraintBottom_toBottomOf="@+id/tvId"
-                app:layout_constraintEnd_toStartOf="@+id/tvScore"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toEndOf="@id/tvId"
-                app:layout_constraintTop_toTopOf="@+id/tvId" />
-
-            <TextView
-                android:id="@+id/tvScore"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="14dp"
-                android:fontFamily="@font/poppins_semibold"
-                android:includeFontPadding="false"
-                android:text="@{@string/quantity_value(viewModel.argsData.userRankScore)}"
-                android:textColor="@color/white"
-                android:textSize="16sp"
-                app:layout_constraintBottom_toBottomOf="@+id/tvName"
+                android:layout_margin="8dp"
+                android:background="@drawable/score_bg"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toEndOf="@+id/tvName"
-                app:layout_constraintTop_toTopOf="@+id/tvName"
-                tools:text="1450" />
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/ivFlagIndia"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="8dp"
+                    android:layout_marginStart="16dp"
+                    android:src="@drawable/ic_flag_india_large"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/labelTotalRunIndia"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:includeFontPadding="false"
+                    android:text="@string/total_runs"
+                    android:textColor="@color/white"
+                    android:textSize="12sp"
+                    app:layout_constraintBottom_toTopOf="@+id/tvTotalRunIndia"
+                    app:layout_constraintStart_toEndOf="@+id/ivFlagIndia"
+                    app:layout_constraintTop_toTopOf="@+id/ivFlagIndia" />
+
+                <TextView
+                    android:id="@+id/tvTotalRunIndia"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:includeFontPadding="false"
+                    android:text="@{@string/quantity_value(viewModel.argsData.indScore)}"
+                    android:textColor="@color/white"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@+id/ivFlagIndia"
+                    app:layout_constraintStart_toEndOf="@+id/ivFlagIndia"
+                    app:layout_constraintTop_toBottomOf="@+id/labelTotalRunIndia"
+                    tools:text="1200" />
+
+                <ImageView
+                    android:id="@+id/ivVs"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_vs"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/ivFlagPak"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="8dp"
+                    android:layout_marginStart="16dp"
+                    android:src="@drawable/ic_flag_pak_large"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/ivVs"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/labelTotalRunPak"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:includeFontPadding="false"
+                    android:text="@string/total_runs"
+                    android:textColor="@color/white"
+                    android:textSize="12sp"
+                    app:layout_constraintBottom_toTopOf="@+id/tvTotalRunPak"
+                    app:layout_constraintStart_toEndOf="@+id/ivFlagPak"
+                    app:layout_constraintTop_toTopOf="@+id/ivFlagPak" />
+
+                <TextView
+                    android:id="@+id/tvTotalRunPak"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:includeFontPadding="false"
+                    android:text="@{@string/quantity_value(viewModel.argsData.pakScore)}"
+                    android:textColor="@color/white"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@+id/ivFlagPak"
+                    app:layout_constraintStart_toEndOf="@+id/ivFlagPak"
+                    app:layout_constraintTop_toBottomOf="@+id/labelTotalRunPak"
+                    tools:text="1500" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerView"
+                adapter="@{adapter}"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp"
+                android:nestedScrollingEnabled="false"
+                android:orientation="vertical"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintBottom_toTopOf="@+id/yourScore"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.181"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/header"
+                tools:itemCount="7"
+                tools:listitem="@layout/cricket_game_leaderboard_item" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/yourScore"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:background="@drawable/my_score_bg"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:background="@drawable/my_score_bg"
+                    android:scaleType="fitXY"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/ivStar"
+                    android:layout_width="12dp"
+                    android:layout_height="12dp"
+                    android:layout_marginStart="16dp"
+                    android:src="@drawable/ic_cricket_star_user"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvId"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="8dp"
+                    android:layout_marginStart="8dp"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:includeFontPadding="false"
+                    android:text="@{@string/quantity_value(viewModel.argsData.userRank)}"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/tvName"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/ivStar"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="52" />
+
+                <TextView
+                    android:id="@+id/tvName"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="14dp"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:includeFontPadding="false"
+                    android:maxLines="1"
+                    android:text="@string/you"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/tvId"
+                    app:layout_constraintEnd_toStartOf="@+id/tvScore"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@id/tvId"
+                    app:layout_constraintTop_toTopOf="@+id/tvId" />
+
+                <TextView
+                    android:id="@+id/tvScore"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="14dp"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:includeFontPadding="false"
+                    android:text="@{@string/quantity_value(viewModel.argsData.userRankScore)}"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/tvName"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/tvName"
+                    app:layout_constraintTop_toTopOf="@+id/tvName"
+                    tools:text="1450" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.constraintlayout.widget.ConstraintLayout>
+
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 

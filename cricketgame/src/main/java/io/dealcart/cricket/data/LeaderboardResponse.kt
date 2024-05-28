@@ -14,17 +14,15 @@ data class LeaderboardBody(
     val score: Int,
     var customerName: String,
     val rank: Int,
+    val userType: String,
 )
 
 @Keep
 @Parcelize
 data class LeaderboardUiData(
-    val firstRankName: String,
-    val firstRankScore: Int = 0,
-    val secondRankName: String,
-    val secondRankScore: Int = 0,
-    val thirdRankName: String,
-    val thirdRankScore: Int = 0,
+    val bestScore: Int = 0,
+    val pakScore: Int = 0,
+    val indScore: Int = 0,
     val userRankScore: Int = 0,
     val userRank: Int = 0,
     val leaderboardList: List<LeaderboardListUiData>,
@@ -35,5 +33,6 @@ data class LeaderboardUiData(
 data class LeaderboardListUiData(
     val rank: Int = 0,
     val name: String,
-    val score: Int = 0
+    val score: Int = 0,
+    val userType: String
 ) : Parcelable

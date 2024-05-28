@@ -1,5 +1,7 @@
 package io.dealcart.cricket
 
+import android.app.Activity
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
@@ -9,11 +11,22 @@ import dagger.hilt.android.AndroidEntryPoint
 @AndroidEntryPoint
 class CricketGameActivity : AppCompatActivity() {
 
-    companion object{
-
-
-
+    companion object {
+        var id: String = ""
+        var name: String = ""
+        fun start(
+            activity: Activity,
+            userId: String,
+            userName: String
+        ) {
+            id = userId
+            name = userName
+            activity.apply {
+                startActivity(Intent(activity, CricketGameActivity::class.java))
+            }
+        }
     }
+
     private lateinit var navController: NavController
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
