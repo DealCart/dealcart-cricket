@@ -40,6 +40,9 @@ android {
         dataBinding = true
         viewBinding = true
     }
+    kotlin {
+        jvmToolchain(17)
+    }
 }
 
 dependencies {

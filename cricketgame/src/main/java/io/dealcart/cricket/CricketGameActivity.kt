@@ -8,6 +8,12 @@ import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class CricketGameActivity : AppCompatActivity() {
+
+    companion object{
+
+
+
+    }
     private lateinit var navController: NavController
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
