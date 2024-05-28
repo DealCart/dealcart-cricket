@@ -84,7 +84,7 @@ afterEvaluate {
             register<MavenPublication>("release") {
                 groupId = "com.github.dealcart"
                 artifactId = "cricket-game"
-                version = "1.0.1"
+                version = "1.0.2"
             }
         }
     }
